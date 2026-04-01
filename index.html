@@ -262,8 +262,16 @@ setInterval(()=>{
 
 // INTRO
 function startSite(){
-intro.classList.add('hide');
-setTimeout(()=>intro.style.display='none',1000);
+  const intro = document.getElementById("intro");
+  intro.classList.add('hide');
+
+  // 🔥 mainkan musik saat klik
+  let music = document.getElementById("music");
+  if(music){
+    music.play();
+  }
+
+  setTimeout(()=>intro.style.display='none',1000);
 }
 
 // LOVE ROMANTIS INTRO
@@ -338,8 +346,6 @@ modal.style.display='none';
 }
 
 const letter = document.getElementById("letter");
-const startBtn = document.getElementById("startBtn");
-const startScreen = document.getElementById("startScreen");
 
 const text = "Selamat ulang tahun, Wanita Hebat 💖<br><br>\
 Aku masih ingat… dulu aku adalah orang yang paling kamu cari.<br>\
