@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+body{margin:0;font-family:'Poppins',sans-serif;background:black;color:white;text-align:center;overflow-x:hidden}
+canvas{position:fixed;top:0;left:0;z-index:-1}
+h1{font-family:'Great Vibes',cursive;font-size:60px;margin-top:20px}
+
+/* INTRO */
+#intro{
+position:fixed;top:0;left:0;width:100%;height:100%;
+background:black;display:flex;flex-direction:column;
+justify-content:center;align-items:center;z-index:999;
+transition:all 1s ease;
+}
+#intro.hide{opacity:0;transform:scale(1.2);pointer-events:none}
+
+button{
+padding:12px 25px;border:none;border-radius:30px;
+background:#ff4b5c;color:white;cursor:pointer;
+transition:0.3s;
+}
+button:hover{transform:scale(1.1)}
+
+.timeline{padding:20px}
+
+/* CARD PREMIUM */
+.card{
+background:rgba(255,255,255,0.08);
+margin:25px auto;
+padding:15px;
+border-radius:20px;
+width:90%;
+max-width:420px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 25px rgba(255,75,92,0.3);
+}
+
+/* SLIDER HORIZONTAL */
+.slider{
+display:flex;
+gap:10px;
+overflow-x:auto;
+scroll-behavior:smooth;
+padding:5px;
+}
+.slider img{
+height:200px;
+border-radius:15px;
+flex-shrink:0;
+cursor:pointer;
+transition:0.4s;
+}
+.slider img:hover{
+transform:scale(1.08);
+box-shadow:0 0 20px rgba(255,75,92,0.6);
+}
+.slider::-webkit-scrollbar{display:none}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:10px;padding:20px;
+}
+.gallery img{width:100%;border-radius:10px;cursor:pointer}
+
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+.modal img{
+width:80%;
+max-width:500px;
+border-radius:20px;
+}
+
+#countdown{font-size:24px;margin-top:10px}
+
+/* LOVE ROMANTIS INTRO */
+.love-bg{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+}
+
+.love{
+position:absolute;
+bottom:-50px;
+color:#ff4b5c;
+font-size:20px;
+animation:loveUp linear infinite;
+}
+
+@keyframes loveUp{
+0%{transform:translateY(0);opacity:0}
+20%{opacity:1}
+100%{transform:translateY(-120vh);opacity:0}
+}
+
+/* LOVE FLOAT */
+.heart{
+position:fixed;
+color:#ff4b5c;
+animation:float 5s linear infinite;
+font-size:20px;
+}
+@keyframes float{
+0%{transform:translateY(100vh);opacity:1}
+100%{transform:translateY(-10vh);opacity:0}
+}
+</style>
+</head>
+
+<body>
+  
+
+<!-- INTRO -->
+<div id="intro">
+  <div class="love-bg"></div>
+  <h2>Untuk Kamu ❤️</h2>
+  <p id="countdown"></p>
+  <button onclick="startSite()">Masuk</button>
+</div>
+
+<canvas id="stars"></canvas>
+
+<h1>Happy Birthday Sayang ❤️</h1>
+
+<!-- TIMELINE -->
+<div class="timeline">
+
+<div class="card">
+  <div class="slider">
+    <img src="https://i.imgur.com/ZTZkKRP.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/CkSfWaA.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/a9c5nQS.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/DxXUCwN.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/TbqbTLP.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/OZw3xu3.png" onclick="openModal(this.src)">
+  </div>
+  <p>TemPoeee DooloOeeee ❤️</p>
+</div>
+
+<div class="card">
+  <div class="slider">
+    <img src="https://i.imgur.com/75KBEsF.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/RUgvlQO.png" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/E4azMyu.png" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/aha8hvC.png" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/oDMUtfM.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/hPO0ues.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/mPLMNwJ.jpeg" onclick="openModal(this.src)">
+  </div>
+  <p>Momen Pertama Kali Bertemu 💖</p>
+</div>
+
+<div class="card">
+  <div class="slider">
+    <img src="https://i.imgur.com/ZYkzwoo.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/MfOFEWG.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/HwYBSDp.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/eb4imav.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/tj3Evnj.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/YJEouJc.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/yz2fmfE.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/pPJTTXR.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/KeqUJ2J.jpeg" onclick="openModal(this.src)">
+  </div>
+  <p>Momen Bahagianya Aku 😘</p>
+</div>
+
+<div class="card">
+  <div class="slider">
+    <img src="https://i.imgur.com/w3YGU11.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/ZLUSmzx.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/iXT10At.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/8eSYv5C.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/tj3Evnj.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/k7L0zFb.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/JjoYJou.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/o4p8unY.jpeg" onclick="openModal(this.src)">
+    <img src="https://i.imgur.com/1LkIRRo.jpeg" onclick="openModal(this.src)">
+  </div>
+  <p>Thank you For Everything so far 🥺😘❤️✨</p>
+</div>
+
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+<img src="https://i.imgur.com/8qRyP7v.jpeg" onclick="openModal(this.src)">
+<img src="https://i.imgur.com/XMumXEK.jpeg" onclick="openModal(this.src)">
+<img src="https://i.imgur.com/kfEDHBz.jpeg" onclick="openModal(this.src)">
+<img src="https://i.imgur.com/huT6r2q.jpeg" onclick="openModal(this.src)">
+<img src="https://i.imgur.com/JHeqWig.jpeg" onclick="openModal(this.src)">
+<img src="https://i.imgur.com/YNYZglF.jpeg" onclick="openModal(this.src)">
+<img src="https://i.imgur.com/Qf2ynp8.jpeg" onclick="openModal(this.src)">
+<img src="https://i.imgur.com/n685iM2.jpeg" onclick="openModal(this.src)">
+<img src="https://i.imgur.com/m0yTAgk.jpeg" onclick="openModal(this.src)">
+<img src="https://i.imgur.com/WVcfkqX.jpeg" onclick="openModal(this.src)">
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal" onclick="closeModal()">
+<img id="modalImg">
+</div>
+
+<!-- VIDEO -->
+<video width="80%" controls>
+<source src="video/video.mp4">
+</video>
+
+<div id="letter"></div>
+
+<button onclick="startSurprise()">Klik Aku ❤️</button>
+
+<audio id="music" loop>
+<source src="audio/lagu.mp3">
+</audio>
+
+<script>
+  
+// COUNTDOWN
+const countdown = document.getElementById("countdown");
+
+const targetDate = new Date("2026-05-04T00:00:00").getTime();
+
+setInterval(()=>{
+  let now = new Date().getTime();
+  let d = targetDate - now;
+
+  if(d <= 0){
+    countdown.innerHTML = "Sudah waktunya ❤️";
+    return;
+  }
+
+  let days = Math.floor(d / (1000*60*60*24));
+  let hours = Math.floor((d % (1000*60*60*24)) / (1000*60*60));
+  let mins = Math.floor((d % (1000*60*60)) / (1000*60));
+  let sec = Math.floor((d % (1000*60)) / 1000);
+
+  countdown.innerHTML = `${days} hari ${hours} jam ${mins} menit ${sec} detik`;
+},1000);
+
+// INTRO
+function startSite(){
+intro.classList.add('hide');
+setTimeout(()=>intro.style.display='none',1000);
+}
+
+// LOVE ROMANTIS INTRO
+function createLove(){
+const love = document.createElement("div");
+love.className = "love";
+love.innerHTML = "❤️";
+
+love.style.left = Math.random() * 100 + "vw";
+love.style.fontSize = (15 + Math.random()*30) + "px";
+love.style.animationDuration = (4 + Math.random()*4) + "s";
+
+const colors = ["#ff4b5c","#ff85a2","#ffc0cb","#ff99cc"];
+love.style.color = colors[Math.floor(Math.random()*colors.length)];
+
+const container = document.querySelector(".love-bg");
+if(container){
+container.appendChild(love);
+}
+
+setTimeout(()=>{
+love.remove();
+},8000);
+}
+
+// JALANKAN SETELAH HALAMAN SIAP
+setInterval(createLove, 400);
+
+// LOVE BACKGROUND ANIMATION
+const canvas = document.getElementById('stars');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let hearts = [];
+
+for(let i=0;i<50;i++){
+hearts.push({
+x: Math.random()*canvas.width,
+y: Math.random()*canvas.height,
+size: Math.random()*20+10,
+speed: Math.random()*1+0.5
+});
+}
+
+function drawHearts(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+hearts.forEach(h=>{
+ctx.font = h.size + "px Arial";
+ctx.fillText("❤️", h.x, h.y);
+
+h.y += h.speed;
+
+if(h.y > canvas.height){
+h.y = -10;
+h.x = Math.random()*canvas.width;
+}
+});
+}
+
+setInterval(drawHearts, 30);
+
+// MODAL
+function openModal(src){
+modal.style.display='flex';
+modalImg.src=src;
+}
+function closeModal(){
+modal.style.display='none';
+}
+
+const letter = document.getElementById("letter");
+const startBtn = document.getElementById("startBtn");
+const startScreen = document.getElementById("startScreen");
+
+const text = "Selamat ulang tahun, Wanita Hebat 💖<br><br>\
+Aku masih ingat… dulu aku adalah orang yang paling kamu cari.<br>\
+Yang kamu tunggu, yang kamu peluk, yang kamu banggakan.<br><br>\
+Terima kasih… karena pernah hadir sejak 2019.<br>\
+Kamu bukan cuma sekadar cerita,<br>\
+kamu adalah bagian dari hidup yang benar-benar aku jalani… dengan sepenuh hati.<br><br>\
+Kita pernah tertawa tanpa alasan,<br>\
+pernah saling genggam seolah dunia tidak akan memisahkan.<br>\
+Tapi nyatanya… waktu mengajarkan hal yang tidak pernah kita inginkan.<br><br>\
+Sekarang kita asing…<br>\
+padahal dulu, bahkan diam pun terasa hangat.<br><br>\
+Aku tidak pernah benar-benar kehilangan kamu,<br>\
+aku hanya belajar… menerima bahwa kamu bukan lagi milikku.<br><br>\
+Dan itu… jauh lebih sakit daripada sekadar perpisahan.<br><br>\
+Kalau suatu hari kamu bahagia,<br>\
+aku harap itu benar-benar dari hatimu…<br>\
+meskipun bukan lagi karena aku.<br><br>\
+Bahagia selalu ya…<br>\
+meskipun bukan lagi denganku 🤍";
+
+let i = 0;
+
+function typeWriter() {
+  if (i < text.length) {
+
+    if (text.substring(i, i+4) === "<br>") {
+      letter.innerHTML += "<br>";
+      i += 4;
+    } else {
+      letter.innerHTML += text.charAt(i);
+      i++;
+    }
+
+    setTimeout(typeWriter, i > text.length - 80 ? 80 : 40);
+  }
+}
+
+startBtn.addEventListener("click", () => {
+  startScreen.style.display = "none"; // hilangkan tombol
+
+  letter.classList.add("show"); // fade in
+  letter.innerHTML = "";
+  i = 0;
+
+  typeWriter();
+});
+
+// LOVE EFFECT
+function startSurprise(){
+music.play();
+typeWriter();
+confetti({particleCount:300,spread:180});
+
+setInterval(()=>{
+let heart=document.createElement('div');
+heart.className='heart';
+heart.innerHTML='❤️';
+heart.style.left=Math.random()*100+'vw';
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),5000);
+},300);
+}
+
+// AUTO SLIDE
+document.querySelectorAll('.slider').forEach(slider=>{
+setInterval(()=>{
+slider.scrollBy({left:220,behavior:'smooth'});
+if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
+slider.scrollTo({left:0});
+}
+},3000);
+});
+
+// LOVE ROMANTIS INTRO
+function createLove(){
+const love = document.createElement("div");
+love.className = "love";
+love.innerHTML = "❤️";
+
+love.style.left = Math.random() * 100 + "vw";
+love.style.fontSize = (15 + Math.random()*30) + "px";
+love.style.animationDuration = (4 + Math.random()*4) + "s";
+
+const colors = ["#ff4b5c","#ff85a2","#ffc0cb","#ff99cc"];
+love.style.color = colors[Math.floor(Math.random()*colors.length)];
+
+const container = document.querySelector(".love-bg");
+if(container){
+container.appendChild(love);
+}
+
+setTimeout(()=>{
+love.remove();
+},8000);
+}
+
+// JALANKAN SETELAH HALAMAN SIAP
+setInterval(createLove, 400);
+
+</script>
+
+</body>
+</html>
