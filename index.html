@@ -224,7 +224,7 @@ font-size:20px;
 </div>
 
 <!-- VIDEO -->
-<video width="80%" controls>
+<video width="80%" controls preload="none">
   <source src="video-baru.mp4" type="video/mp4">
 </video>
 
@@ -419,29 +419,6 @@ slider.scrollTo({left:0});
 }
 },5000);
 });
-
-// LOVE ROMANTIS INTRO
-function createLove(){
-const love = document.createElement("div");
-love.className = "love";
-love.innerHTML = "❤️";
-
-love.style.left = Math.random() * 100 + "vw";
-love.style.fontSize = (15 + Math.random()*30) + "px";
-love.style.animationDuration = (4 + Math.random()*4) + "s";
-
-const colors = ["#ff4b5c","#ff85a2","#ffc0cb","#ff99cc"];
-love.style.color = colors[Math.floor(Math.random()*colors.length)];
-
-const container = document.querySelector(".love-bg");
-if(container){
-container.appendChild(love);
-}
-
-setTimeout(()=>{
-love.remove();
-},8000);
-}
 
 </script>
 
