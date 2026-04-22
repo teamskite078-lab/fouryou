@@ -398,7 +398,7 @@ startBtn.addEventListener("click", () => {
 function startSurprise(){
 music.play();
 typeWriter();
-confetti({particleCount:300,spread:180});
+confetti({particleCount:120,spread:100});
 
 setInterval(()=>{
 let heart=document.createElement('div');
@@ -407,7 +407,7 @@ heart.innerHTML='❤️';
 heart.style.left=Math.random()*100+'vw';
 document.body.appendChild(heart);
 setTimeout(()=>heart.remove(),5000);
-},300);
+},800);
 }
 
 // AUTO SLIDE
@@ -417,7 +417,7 @@ slider.scrollBy({left:220,behavior:'smooth'});
 if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
 slider.scrollTo({left:0});
 }
-},3000);
+},5000);
 });
 
 // LOVE ROMANTIS INTRO
